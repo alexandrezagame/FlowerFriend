@@ -1,1 +1,6 @@
 <h1>ALL FLOWERS</h1>
+<% @flowers.each do |flower| %>
+<%= flower.name %>
+<%= flower.species %>
+<%= link_to "show", flower_path(flower) %>
+<% end %>
