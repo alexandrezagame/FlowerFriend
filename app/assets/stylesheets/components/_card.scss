@@ -1,0 +1,48 @@
+$font: 'PT Sans', sans-serif;
+
+
+
+.card-product {
+    height: 300px;
+    width: 300px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    margin: 15px 0px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+    &:hover{
+      opacity: 0.8;
+    }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+.card-product h2 {
+  font-size: 24px;
+  margin: 0;
+  font-family: $font;
+}
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  font-family: $font;
+}
+.card-product .card-product-infos {
+  padding: 16px;
+}
+.cards {
+    display: flex;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-gap: 16px;
+    justify-content: space-around;
+    align-items: center;
+}
