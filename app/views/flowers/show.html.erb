@@ -9,6 +9,7 @@
                 <%= link_to 'Back', flowers_path  %>
                 <%= link_to 'Edit', edit_flower_path(@flower.id) %>
                 <%= link_to 'Delete', flower_path(@flower), method: :delete %>
+                <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
         </div>
     </div>
 </div>
