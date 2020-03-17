@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @flower = Flower.find(params[:flower_id])
     @booking = Booking.new
@@ -8,10 +13,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @flower = Flower.find(params[:flower_id])
     @booking.flower = @flower
-    # @ingredient = Ingredient.find_by_name(params[:dose][:ingredient])
-    # @dose.ingredient = @ingredient
-    if @booking.save!
-      redirect_to flower_path(@flower)
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to bookings_path
     else
       render :new
     end
@@ -20,7 +25,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
