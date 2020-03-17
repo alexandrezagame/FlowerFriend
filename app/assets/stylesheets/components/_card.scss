@@ -1,20 +1,18 @@
 $font: 'PT Sans', sans-serif;
 
-
-
 .card-product {
-    height: 300px;
-    width: 300px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    background-size: cover !important;
-    background-position: center;
-    color: white;
-    position: relative;
-    margin: 15px 0px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-    &:hover{
-      opacity: 0.8;
+  height: 300px;
+  width: 300px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 15px 0px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0);
+  &:hover{
+    opacity: 0.8;
     }
 }
 

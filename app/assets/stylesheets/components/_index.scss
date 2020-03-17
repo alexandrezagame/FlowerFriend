@@ -4,7 +4,12 @@
 @import "navbar";
 @import "card";
 @import "banner";
+@import "button";
+@import "footer";
 
+// body {
+//   background-color: white;
+// }
 
 h1 {
   font-family: 'PT Sans', sans-serif;
@@ -12,5 +17,3 @@ h1 {
   margin-right: 1100px;
   // align-items: left;
 }
-@import "button";
-@import "footer";
