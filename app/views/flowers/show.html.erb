@@ -1,0 +1,14 @@
+<div class="border-top">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>Flowers#show</h1>
+                <% @flowers.each do |flower| %>
+                  <p>
+                    <%= @flower.name %>
+                    <%= @flower.species %>
+                  </p>
+                <% end %>
+                <%= link_to 'Back', flowers_path  %>
+        </div>
+    </div>
+</div>
