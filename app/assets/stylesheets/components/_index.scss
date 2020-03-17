@@ -2,5 +2,15 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "card";
+@import "banner";
+
+
+h1 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: lighter;
+  margin-right: 1100px;
+  // align-items: left;
+}
 @import "button";
 @import "footer";
