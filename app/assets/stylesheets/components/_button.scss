@@ -1,12 +1,16 @@
 .btn-flower {
 color: white;
 padding: 8px 24px;
-border-radius: 8px;
-background: #1EDD88;
+border-radius: 2px;
+border: 1px solid transparent;
+border-color: white;
+background-color: transparent;
 transition: background 0.3s ease;
+font-family: sans-serif;
 }
 
 .btn-flower:hover {
-background: #1BCB7F;
+
 color: white;
 }
+
