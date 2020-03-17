@@ -3,5 +3,5 @@ class Flower < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
   validates :species, presence: true, inclusion: {in: SPECIES}
-  validates :price_per_day, presence: true
+  # validates :price_per_day, presence: true
 end
