@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TODO</title>
@@ -8,19 +9,22 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     </style>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-    <%= render 'devise/shared/banner'%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %>
+    <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
+
+<body>
+    <p class="notice">
+        <%= notice %>
+    </p>
+    <p class="alert">
+        <%= alert %>
+    </p>
     <%= yield %>
-
     <%= javascript_include_tag 'application' %>
-
     <%= javascript_pack_tag 'application' %>
-  </body>
+</body>
 
 </html>
