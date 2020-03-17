@@ -1,0 +1,26 @@
+class BookingsController < ApplicationController
+  def new
+    @flower = Flower.find(params[:flower_id])
+    @booking = Booking.new
+  end
+
+  def create
+    @booking = Booking.new(booking_params)
+    @flower = Flower.find(params[:flower_id])
+    @booking.flower = @flower
+    # @ingredient = Ingredient.find_by_name(params[:dose][:ingredient])
+    # @dose.ingredient = @ingredient
+    if @booking.save!
+      redirect_to flower_path(@flower)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :user_id)
+  end
+
+end

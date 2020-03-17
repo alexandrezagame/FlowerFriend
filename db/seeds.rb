@@ -33,11 +33,19 @@ puts "create users"
   )
   daniel.save!
 
-puts "creates flowers"
+puts "creating your flower"
   flower = Flower.new(
     name: "red rose",
     species: "Rose",
     user: alex
+    )
+  flower.save!
+
+puts "creating your flower"
+  flower = Flower.new(
+    name: "red rose",
+    species: "Tulip",
+    user: felix
     )
   flower.save!
 
