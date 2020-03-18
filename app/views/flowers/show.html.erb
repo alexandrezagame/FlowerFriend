@@ -1,4 +1,5 @@
 <div align="center">
+
     <div class="show-container">
         <div class="show-row">
             <!--         <div class="col-6"> -->
@@ -6,6 +7,7 @@
                 <%= @flower.name %>
                 <br>
                 <%= @flower.species %>
+              <%= @flower.total_price  %>
                 <% if @flower.picture.attached? %>
                 <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
                 <% end %>
@@ -32,5 +34,5 @@
         <%= render 'shared/map'%>
     </div>
 </div>
-H
+
 </div>
