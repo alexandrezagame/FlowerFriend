@@ -56,6 +56,6 @@ class FlowersController < ApplicationController
   end
 
   def flower_params
-    params.require(:flower).permit(:name, :species, :address)
+    params.require(:flower).permit(:name, :species, :address, :picture)
   end
 end

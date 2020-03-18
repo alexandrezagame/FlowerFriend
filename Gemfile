@@ -21,6 +21,10 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
+#cloudinary / dotenv security
+gem 'cloudinary', '~> 1.12.0'
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
