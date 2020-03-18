@@ -1,9 +1,28 @@
-<h1>ALL FLOWERS</h1>
-<%= link_to "Create a FLOWAAAH", new_flower_path %>
+
+<%= render 'shared/banner'%>
+<div class="card-container">
+  <div class="text-container">
+    <h1>Flowers</h1>
+    <%= link_to "Create a flower", new_flower_path, class: "btn btn-outline-light create-button"%>
+    </div>
+    <!-- <div class="custom-border-top my-3"></div> -->
+    <!-- <div class="row justify-content-center">
+    <div class="col-6"> -->
+    <div class="cards">
+        <% @flowers.each do |flower| %>
+        <div class="card-product-infos">
+            <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1557968581-06d4b39ec0d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
+                <h5>
+                    <%= flower.name %>
+                </h5>
+                <p>
+                    <%= flower.species %>
+                </p>
+                <br>
+                <%= link_to "show", flower_path(flower), class: "btn btn-outline-light button" %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 <br>
-<br>
-<% @flowers.each do |flower| %>
-<%= flower.name %>
-<%= flower.species %>
-<%= link_to "show", flower_path(flower) %>
-<% end %>

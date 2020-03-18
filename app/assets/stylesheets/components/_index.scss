@@ -7,13 +7,12 @@
 @import "button";
 @import "footer";
 
-// body {
-//   background-color: white;
-// }
-
-h1 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: lighter;
-  margin-right: 1100px;
-  // align-items: left;
+body {
+  background-color: white;
 }
+
+#img:hover {
+  opacity: .5;
+}
+
+
