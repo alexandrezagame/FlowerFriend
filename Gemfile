@@ -15,6 +15,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'geocoder'
+gem 'cloudinary', '~> 1.12.0'
+
+gem 'cloudinary', '~> 1.12.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 #cloudinary / dotenv security
 gem 'cloudinary', '~> 1.12.0'

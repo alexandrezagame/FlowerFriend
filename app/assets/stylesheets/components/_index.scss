@@ -6,13 +6,9 @@
 @import "banner";
 @import "button";
 @import "footer";
+@import "form";
+@import "map";
 
 body {
-  background-color: white;
+  background-color: #1D4A4D;
 }
-
-#img:hover {
-  opacity: .5;
-}
-
-

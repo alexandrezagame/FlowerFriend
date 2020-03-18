@@ -1,5 +1,7 @@
-<div>
+<div align="center">
+<div class="new-form">
     <h2>New Flower</h2>
     <%= render 'form', flower: @flower %>
-    <%= link_to 'Back', flowers_path %>
+</div>
+   <%= link_to 'Back', flowers_path, class: "btn btn-outline-light form-button" %>
 </div>
