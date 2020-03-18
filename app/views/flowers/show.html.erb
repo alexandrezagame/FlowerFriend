@@ -1,36 +1,34 @@
-<div align="center">
-    <div class="show-container">
-        <div class="show-row">
-            <!--         <div class="col-6"> -->
-            <p>
-                <%= @flower.name %>
-                <br>
-                <%= @flower.species %>
-                <% if @flower.picture.attached? %>
-                <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
-                <% end %>
-            </p>
-            <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="">
-            <ul>
-                <li>
-                    <%= link_to 'Back', flowers_path  %>
-                </li>
-                <li>
-                    <%= link_to 'Edit', edit_flower_path(@flower.id) %>
-                </li>
-                <li>
-                    <%= link_to 'Delete', flower_path(@flower), method: :delete %>
-                </li>
-                <li>
-                    <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
-                </li>
-            </ul>
-            <!--         </div> -->
-        </div>
+<div class="card-product-show">
+    </h5>
+    <% if @flower.picture.attached? %>
+    <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
+    <% else %>
+    <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="">
+    <div class="card-product-infos">
+        <% end %>
+        <h2>
+            <%= @flower.name %>
+        </h2>
+
+        <p>
+            <%= @flower.species %>
+        </p>
+        <ul>
+            <li>
+                <%= link_to 'Back', flowers_path  %>
+            </li>
+            <li>
+                <%= link_to 'Edit', edit_flower_path(@flower.id) %>
+            </li>
+            <li>
+                <%= link_to 'Delete', flower_path(@flower), method: :delete %>
+            </li>
+            <li>
+                <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
+            </li>
+        </ul>
     </div>
     <div class="mapcontainer">
         <%= render 'shared/map'%>
     </div>
-</div>
-H
 </div>
