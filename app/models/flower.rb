@@ -4,7 +4,7 @@ class Flower < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
   validates :species, presence: true, inclusion: {in: SPECIES}
-  # validates :price_per_day, presence: true
+  validates :total_price, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end
