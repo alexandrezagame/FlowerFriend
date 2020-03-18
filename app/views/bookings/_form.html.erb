@@ -1,7 +1,6 @@
  <%= simple_form_for [@flower, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.association :user %>
     <%= f.submit %>
   <% end %>
 
