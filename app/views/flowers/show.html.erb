@@ -5,6 +5,9 @@
                   <p>
                     <%= @flower.name %>
                     <%= @flower.species %>
+                    <% if @flower.picture.attached? %>
+                    <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
+                    <% end %>
                   </p>
                 <%= link_to 'Back', flowers_path  %>
                 <%= link_to 'Edit', edit_flower_path(@flower.id) %>
