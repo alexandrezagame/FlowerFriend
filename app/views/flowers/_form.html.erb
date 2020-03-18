@@ -1,5 +1,6 @@
 <%= simple_form_for @flower do |f| %>
     <%= f.input :name %>
     <%= f.input :species, collection: Flower::SPECIES, as: :select %>
+    <%= f.input :address %>
     <%= f.submit %>
   <% end %>
