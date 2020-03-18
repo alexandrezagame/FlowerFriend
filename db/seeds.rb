@@ -37,7 +37,7 @@ puts "creating your flower"
   flower = Flower.new(
     name: "red rose",
     species: "Rose",
-    address: "Kåkbrinken 10, 111 27 Stockholm"
+    address: "Kåkbrinken 10, 111 27 Stockholm",
     user: alex
     )
   flower.save!
@@ -46,7 +46,7 @@ puts "creating your flower"
   flower = Flower.new(
     name: "red rose",
     species: "Tulip",
-    address: "Götgatan 33, 116 21 Stockholm"
+    address: "Götgatan 33, 116 21 Stockholm",
     user: felix
     )
   flower.save!
