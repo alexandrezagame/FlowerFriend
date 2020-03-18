@@ -1,15 +1,21 @@
-<div class="border-top">
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <h1>Flower#show</h1>
+<div align="center">
+<div class="show-container">
+    <div class="show-row">
+<!--         <div class="col-6"> -->
+
                   <p>
                     <%= @flower.name %>
+                    <br>
                     <%= @flower.species %>
                   </p>
-                <%= link_to 'Back', flowers_path  %>
-                <%= link_to 'Edit', edit_flower_path(@flower.id) %>
-                <%= link_to 'Delete', flower_path(@flower), method: :delete %>
-                <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
-        </div>
+                  <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="">
+                <ul>
+                <li><%= link_to 'Back', flowers_path  %></li>
+                <li><%= link_to 'Edit', edit_flower_path(@flower.id) %></li>
+                <li><%= link_to 'Delete', flower_path(@flower), method: :delete %></li>
+                <li><%= link_to 'Book this flower', new_flower_booking_path(@flower) %></li>
+                </ul>
+<!--         </div> -->
     </div>
+</div>
 </div>
