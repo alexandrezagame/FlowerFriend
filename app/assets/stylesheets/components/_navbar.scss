@@ -10,7 +10,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 50px;
+  height: auto;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .avatar {
