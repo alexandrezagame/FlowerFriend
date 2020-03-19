@@ -7,6 +7,15 @@ def index
    else
      @flowers = Flower.all
    end
+   @flower_shops = FlowerShop.all
+   @markers = @flower_shops.map do |flower_shop|
+      {
+        lat: flower_shop.latitude,
+        lng: flower_shop.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flower: flower_shop }),
+        image_url: helpers.asset_url('44-440344_blue-flower-transparent-png-clip-art-image-african')
+      }
+    end
  end
 
   def show

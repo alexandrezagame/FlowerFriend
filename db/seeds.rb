@@ -60,7 +60,7 @@ puts "creating your flower"
 
 puts "creating your flower"
   flower = Flower.new(
-    name: "blue flower",
+    name: "flower 1 from alpha shop",
     species: "Azalea",
     total_price: "25€",
     flower_shop: flower_shop_alpha
@@ -69,7 +69,7 @@ puts "creating your flower"
 
 puts "creating your flower"
   flower = Flower.new(
-    name: "white tulip",
+    name: "flower 2 from alpha shop",
     species: "Tulip",
     total_price: "15€",
     flower_shop: flower_shop_alpha
@@ -78,7 +78,7 @@ flower.save!
 
 puts "creating your flower"
   flower = Flower.new(
-    name: "yellow flower",
+    name: "flower 3 from alpha shop",
     species: "Pione",
     total_price: "15€",
     flower_shop: flower_shop_alpha
@@ -87,7 +87,7 @@ flower.save!
 
 puts "creating your flower"
   flower = Flower.new(
-    name: "red rose",
+    name: "flower 1 from beta shop",
     species: "Tulip",
     total_price: "10€",
     flower_shop: flower_shop_beta
