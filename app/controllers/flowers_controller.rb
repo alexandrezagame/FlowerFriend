@@ -21,7 +21,7 @@ class FlowersController < ApplicationController
 
   def create
     @flower = Flower.new(flower_params)
-    @flower.user = current_user
+    @flower.flower_shop = current_user.flower_shop
     if @flower.save!
       redirect_to @flower, notice: 'You flower was successfully created.'
     else
