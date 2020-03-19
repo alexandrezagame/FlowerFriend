@@ -3,3 +3,5 @@ class RemoveReferenceFromFlowers < ActiveRecord::Migration[5.2]
     remove_reference :flowers, :user, index: true
   end
 end
+
+

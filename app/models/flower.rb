@@ -6,4 +6,3 @@ class Flower < ApplicationRecord
   validates :species, presence: true, inclusion: {in: SPECIES}
   validates :total_price, presence: true
 end
-
