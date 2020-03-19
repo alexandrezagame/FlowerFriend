@@ -38,6 +38,7 @@ puts "creating your flower"
     name: "red rose",
     species: "Rose",
     address: "Kåkbrinken 10, 111 27 Stockholm",
+    total_price: "15€",
     user: alex
     )
   flower.save!
@@ -48,6 +49,7 @@ puts "creating your flower"
     species: "Tulip",
     address: "Götgatan 33, 116 21 Stockholm",
     user: felix
+    total_price: "25€",
     )
   flower.save!
 

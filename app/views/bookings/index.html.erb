@@ -1,5 +1,6 @@
 <h1>Bookings Page</h1>
+<ul>
 <% @bookings.each do |booking|%>
-<%= booking.start_date.strftime('%A, %d %b %Y %l:%M %p')  %>
-<%= booking.end_date.strftime('%A, %d %b %Y %l:%M %p') %>
+<li> <%= booking.start_date.strftime('%A, %d %b %Y')  %> </li>
 <% end %>
+</ul>
