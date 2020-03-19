@@ -1,5 +1,4 @@
 <div class="card-product-show">
-    </h5>
     <% if @flower.picture.attached? %>
     <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
     <% else %>
@@ -27,7 +26,7 @@
             <li>
                 <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
             </li>
-              <% end %>
+            <% end %>
             <li>
                 <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop) %>
             </li>
