@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  color: #1D4A4D;
   // margin-bottom: -17px;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .home-button {
-  border: 2px solid #dadada;
+  border: 1px solid #1D4A4D;
   border-radius: 50%;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0);
 }
@@ -29,4 +30,14 @@
 .options {
   padding-right: 20px;
   align-items: center;
+}
+
+.nav-btn {
+  color: #1D4A4D;
+  border-color: #1D4A4D;
+  &:hover {
+  color: white;
+  background-color: #1D4A4D;
+  opacity: .7;
+  }
 }
