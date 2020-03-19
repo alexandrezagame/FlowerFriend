@@ -65,6 +65,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_102735) do
     t.integer "price_per_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.string "total_price"
     t.bigint "flower_shop_id"
     t.index ["flower_shop_id"], name: "index_flowers_on_flower_shop_id"

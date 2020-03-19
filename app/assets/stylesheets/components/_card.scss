@@ -1,4 +1,19 @@
 
+
+.main-container {
+  display: flex;
+}
+#map {
+  height: calc(100vh - 90px);
+  /*vh = viewport height / vw= = viewport width */
+  position: sticky;
+  top: 0;
+  margin-top: 16px;
+  width: 400px;
+}
+
+
+
 .card-product {
   height: 250px;
   width: 250px;
@@ -43,9 +58,7 @@
 }
 
 .card-container {
-  align-items: center;
-  width: 70%;
-  height: 100%;
+
 }
 
 .card-container h1 {
@@ -62,31 +75,18 @@
   font-family: $font;
 }
 
-// .create-button:hover {
-//   opacity: 0.7;
-// }
-
-// .create-flower-btn {
-//   color: white;
-//   margin-top: 30px;
-//   padding-right: 0px;
-//   margin-left: 0px;
-//   text-align: left;
-// }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-grow: 1;
   // flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-around;
-  padding: 20px;
+  // flex-wrap: wrap;
+  // gap: 12px;
+  // justify-content: space-around;
+  // padding: 20px;
 }
-
-// .button {
-//     margin-top: 148px;
-//     margin-left: 205px;
-// }
 
 .button:hover {
   // text-shadow: 0 1px 3px rgba(0,0,0,0);
