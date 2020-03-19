@@ -1,10 +1,8 @@
 <%= render 'shared/banner'%>
-<div class="wrapper">
-    <div class="card-container">
-        <div class="text-container">
-        </div>
-        <div class="cards">
-            <% @flowers.each do |flower| %>
+<div class="main-container">
+    <!-- Cards -->
+    <div class="cards">
+      <% @flowers.each do |flower| %>
             <%= link_to flower_path(flower) do %>
             <div class="card-product-infos">
                 <% if flower.picture.attached? %>
@@ -20,14 +18,17 @@
                         </p>
                         <br>
                     </div>
-                <% end %>
-            </div>
-            <% end %>
-           <div class="mapcontainer">
-            <%= render 'shared/map'%>
+                  </div>
+              <% end %>
+          <% end %>
         </div>
-        </div>
-        <br>
-    </div>
-    </div>
-    </div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+</div>
+

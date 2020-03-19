@@ -1,10 +1,12 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="container">
 <div class="card-product-show">
     <% if @flower.picture.attached? %>
     <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
     <% else %>
     <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="">
+    <% end %>
     <div class="card-product-infos">
-        <% end %>
         <h2>
             <%= @flower.name %>
         </h2>
@@ -28,4 +30,6 @@ Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaeren
                   <% end %>
                 <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
     </div>
+</div>
+</div>
 </div>

@@ -12,3 +12,7 @@
 body {
   background-color: #1D4A4D;
 }
+
+.content {
+ min-height: calc(100vh - 40px);
+}
