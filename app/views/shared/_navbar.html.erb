@@ -2,10 +2,15 @@
   <%= link_to flowers_path, class: "navbar-brand home-button" do %>
     <%= image_tag "https://cdn.dribbble.com/users/2442548/screenshots/5142105/illustrations_cacti_round_2x.png" %>
     <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <!-- SEARCH BAR -->
+  <form action="/flowers" method="GET">
+    <input type="text" name="query" id="query" placeholder="Search flower…">
+    <input type="submit" name="commit" value="Search">
+  </form>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -29,5 +34,6 @@
         </li>
       <% end %>
     </ul>
+
   </div>
 </div>
