@@ -1,36 +1,31 @@
 <%= render 'shared/banner'%>
-
 <div class="wrapper">
-<div class="card-container">
-    <div class="text-container">
-    </div>
-    <div class="cards">
-        <% @flowers.each do |flower| %>
-        <div class="card-product-infos">
-            <% if flower.picture.attached? %>
-            <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
-                <% else %>
-                <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
-                    <% end %>
-                    <h5>
-                        <%= flower.name %>
-                    </h5>
-                    <p>
-                        <%= flower.species %>
-                    </p>
-                    <br>
-                    <%= link_to "show", flower_path(flower), class: "btn btn-outline-light button" %>
-                </div>
+    <div class="card-container">
+        <div class="text-container">
+        </div>
+        <div class="cards">
+            <% @flowers.each do |flower| %>
+            <%= link_to flower_path(flower) do %>
+            <div class="card-product-infos">
+                <% if flower.picture.attached? %>
+                <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
+                    <% else %>
+                    <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
+                        <% end %>
+                        <h5>
+                            <%= flower.name %>
+                        </h5>
+                        <p>
+                            <%= flower.species %>
+                        </p>
+                        <br>
+                    </div>
+                <% end %>
             </div>
             <% end %>
+                            <div class="mapcontainer">
+            <%= render 'shared/map'%>
         </div>
-    </div>
-
-
-    <br>
-
-
-  <div class="mapcontainer">
-    <%= render 'shared/map'%>
-    </div>
+        </div>
+        <br>
     </div>
