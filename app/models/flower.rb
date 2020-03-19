@@ -5,4 +5,11 @@ class Flower < ApplicationRecord
   validates :name, presence: true
   validates :species, presence: true, inclusion: {in: SPECIES}
   validates :total_price, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_species,
+  against: [ :name, :species ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end

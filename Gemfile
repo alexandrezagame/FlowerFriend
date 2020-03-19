@@ -16,10 +16,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'geocoder'
-gem 'cloudinary', '~> 1.12.0'
 
-gem 'cloudinary', '~> 1.12.0'
-gem 'dotenv-rails', groups: [:development, :test]
+#search function
+gem 'pg_search', '~> 2.3.0'
 
 #cloudinary / dotenv security
 gem 'cloudinary', '~> 1.12.0'
