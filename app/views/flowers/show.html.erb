@@ -9,7 +9,6 @@
         <h2>
             <%= @flower.name %>
         </h2>
-
         <p>
             <%= @flower.species %>
         </p>
@@ -17,20 +16,24 @@
             <li>
                 <%= link_to 'Back', flowers_path  %>
             </li>
+            <% if @flower.flower_shop == current_user.flower_shop %>
             <li>
                 <%= link_to 'Edit', edit_flower_path(@flower.id) %>
             </li>
             <li>
                 <%= link_to 'Delete', flower_path(@flower), method: :delete %>
             </li>
+            <% else %>
             <li>
                 <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
             </li>
+              <% end %>
+            <li>
+                <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop) %>
+            </li>
         </ul>
-
     </div>
     <div class="mapcontainer">
         <%= render 'shared/map'%>
     </div>
 </div>
-

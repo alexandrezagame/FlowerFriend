@@ -3,17 +3,6 @@ class FlowersController < ApplicationController
 
   def index
     @flowers = Flower.all
-
-    @flowers = Flower.geocoded
-
-    @markers = @flowers.map do |flower|
-      {
-        lat: flower.latitude,
-        lng: flower.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flower: flower }),
-        image_url: helpers.asset_url('44-440344_blue-flower-transparent-png-clip-art-image-african')
-      }
-    end
   end
 
   def show
@@ -21,7 +10,7 @@ class FlowersController < ApplicationController
 
   def create
     @flower = Flower.new(flower_params)
-    @flower.user = current_user
+    @flower.flower_shop = current_user.flower_shop
     if @flower.save!
       redirect_to @flower, notice: 'You flower was successfully created.'
     else
