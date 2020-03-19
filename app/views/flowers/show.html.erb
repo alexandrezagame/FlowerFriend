@@ -8,31 +8,24 @@
         <h2>
             <%= @flower.name %>
         </h2>
-        <p>
+        <h6>
             <%= @flower.species %>
+        </h6>
+        <p>
+          "Lorem ipsum dolor sit amet, nisl efficiantur has in. Sit ne quaeque gloriatur, vix omittam voluptatum deterruisset ea. Has cetero iisque theophrastus ad, id oratio officiis pro. Mea partem tractatos ex, at has fugit epicuri. His ut modo nulla noluisse, quo ei laudem timeam, te noluisse fabellas perpetua vel. Id prima falli tacimates vis, malorum veritus mel an, te vis sanctus dissentias mediocritatem.
+
+Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaerendum ea. At erant feugiat vis, no mei scaevola assueverit. Ne quot meliore disputationi qui. Quando tamquam eloquentiam ei nec."
+
         </p>
-        <ul>
-            <li>
-                <%= link_to 'Back', flowers_path  %>
-            </li>
-            <% if @flower.flower_shop == current_user.flower_shop %>
-            <li>
-                <%= link_to 'Edit', edit_flower_path(@flower.id) %>
-            </li>
-            <li>
-                <%= link_to 'Delete', flower_path(@flower), method: :delete %>
-            </li>
-            <% else %>
-            <li>
-                <%= link_to 'Book this flower', new_flower_booking_path(@flower) %>
-            </li>
-            <% end %>
-            <li>
-                <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop) %>
-            </li>
-        </ul>
     </div>
-    <div class="mapcontainer">
-        <%= render 'shared/map'%>
+    <div class="show-buttons">
+                <%= link_to 'Back', flowers_path, class: "btn btn-outline-light buttons" %>
+                  <% if @flower.flower_shop == current_user.flower_shop %>
+                <%= link_to 'Edit', edit_flower_path(@flower.id), class: "btn btn-outline-light buttons" %>
+                <%= link_to 'Delete', flower_path(@flower), method: :delete, class: "btn btn-outline-light buttons" %>
+                  <% else %>
+                <%= link_to 'Book this flower', new_flower_booking_path(@flower),  class: "btn btn-outline-light buttons" %>
+                  <% end %>
+                <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
     </div>
 </div>
