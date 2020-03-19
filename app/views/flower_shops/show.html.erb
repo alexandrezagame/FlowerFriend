@@ -1,0 +1,27 @@
+<div class="card-product-show">
+  <% @flower_shop.flowers.each do |flower| %>
+        <div class="card-product-infos">
+            <% if flower.picture.attached? %>
+            <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
+                <% else %>
+                <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
+                    <% end %>
+                    <h5>
+                        <%= flower.name %>
+                    </h5>
+                    <p>
+                        <%= flower.species %>
+                    </p>
+                    <br>
+                    <%= link_to "show", flower_path(flower), class: "btn btn-outline-light button" %>
+                </div>
+            </div>
+            <% end %>
+    <li>
+        <%= link_to "Add a new flower", new_flower_path, class: "nav-link" %>
+    </li>
+    <li>
+        <%= link_to 'Back', flowers_path %>
+    </li>
+    </ul>
+</div>

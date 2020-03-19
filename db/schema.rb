@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_153356) do
+
+ActiveRecord::Schema.define(version: 2020_03_19_102735) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,18 +50,26 @@ ActiveRecord::Schema.define(version: 2020_03_18_153356) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "flowers", force: :cascade do |t|
-    t.string "name"
-    t.string "species"
-    t.integer "price_per_day"
+  create_table "flower_shops", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.index ["user_id"], name: "index_flower_shops_on_user_id"
+  end
+
+  create_table "flowers", force: :cascade do |t|
+    t.string "name"
+    t.string "species"
+    t.integer "price_per_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "total_price"
-    t.index ["user_id"], name: "index_flowers_on_user_id"
+    t.bigint "flower_shop_id"
+    t.index ["flower_shop_id"], name: "index_flowers_on_flower_shop_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,5 +89,6 @@ ActiveRecord::Schema.define(version: 2020_03_18_153356) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "flowers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "flowers", "users"
+  add_foreign_key "flower_shops", "users"
+  add_foreign_key "flowers", "flower_shops"
 end

@@ -8,7 +8,6 @@
         <h2>
             <%= @flower.name %>
         </h2>
-
         <h6>
             <%= @flower.species %>
         </h6>
@@ -18,13 +17,15 @@
 Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaerendum ea. At erant feugiat vis, no mei scaevola assueverit. Ne quot meliore disputationi qui. Quando tamquam eloquentiam ei nec."
 
         </p>
-
     </div>
     <div class="show-buttons">
                 <%= link_to 'Back', flowers_path, class: "btn btn-outline-light buttons" %>
+                  <% if @flower.flower_shop == current_user.flower_shop %>
                 <%= link_to 'Edit', edit_flower_path(@flower.id), class: "btn btn-outline-light buttons" %>
                 <%= link_to 'Delete', flower_path(@flower), method: :delete, class: "btn btn-outline-light buttons" %>
+                  <% else %>
                 <%= link_to 'Book this flower', new_flower_booking_path(@flower),  class: "btn btn-outline-light buttons" %>
+                  <% end %>
+                <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
     </div>
 </div>
-

@@ -1,27 +1,20 @@
 class FlowersController < ApplicationController
   before_action :set_flower, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @flowers = Flower.all
-
-    @flowers = Flower.geocoded
-
-    @markers = @flowers.map do |flower|
-      {
-        lat: flower.latitude,
-        lng: flower.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flower: flower }),
-        image_url: helpers.asset_url('44-440344_blue-flower-transparent-png-clip-art-image-african')
-      }
-    end
-  end
+def index
+   if params[:query].present?
+     @flowers = Flower.search_by_name_and_species(params[:query])
+   else
+     @flowers = Flower.all
+   end
+ end
 
   def show
   end
 
   def create
     @flower = Flower.new(flower_params)
-    @flower.user = current_user
+    @flower.flower_shop = current_user.flower_shop
     if @flower.save!
       redirect_to @flower, notice: 'You flower was successfully created.'
     else

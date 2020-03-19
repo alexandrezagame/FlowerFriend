@@ -4,8 +4,8 @@
 #
 
 puts"deleting all database..."
-User.destroy_all
 Flower.destroy_all
+User.destroy_all
 
 puts "create users"
   alex = User.new(
@@ -33,23 +33,64 @@ puts "create users"
   )
   daniel.save!
 
+puts "creating your flowershop"
+flower_shop_alpha = FlowerShop.new(
+    name: "alpha",
+    address: "Götgatan 33, 116 21 Stockholm",
+    user: alex
+  )
+flower_shop_alpha.save!
+
+puts "creating your flowershop"
+flower_shop_beta = FlowerShop.new(
+    name: "beta",
+    address: "Kåkbrinken 10, 111 27 Stockholm",
+    user: nina
+  )
+flower_shop_beta.save!
+
 puts "creating your flower"
   flower = Flower.new(
     name: "red rose",
     species: "Rose",
-    address: "Kåkbrinken 10, 111 27 Stockholm",
     total_price: "15€",
-    user: alex
+    flower_shop: flower_shop_alpha
     )
   flower.save!
 
 puts "creating your flower"
   flower = Flower.new(
+    name: "blue flower",
+    species: "Azalea",
+    total_price: "25€",
+    flower_shop: flower_shop_alpha
+    )
+  flower.save!
+
+puts "creating your flower"
+  flower = Flower.new(
+    name: "white tulip",
+    species: "Tulip",
+    total_price: "15€",
+    flower_shop: flower_shop_alpha
+    )
+flower.save!
+
+puts "creating your flower"
+  flower = Flower.new(
+    name: "yellow flower",
+    species: "Pione",
+    total_price: "15€",
+    flower_shop: flower_shop_alpha
+    )
+flower.save!
+
+puts "creating your flower"
+  flower = Flower.new(
     name: "red rose",
     species: "Tulip",
-    address: "Götgatan 33, 116 21 Stockholm",
-    user: felix
-    total_price: "25€",
+    total_price: "10€",
+    flower_shop: flower_shop_beta
     )
   flower.save!
 
