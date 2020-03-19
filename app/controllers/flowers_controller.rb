@@ -1,9 +1,13 @@
 class FlowersController < ApplicationController
   before_action :set_flower, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @flowers = Flower.all
-  end
+def index
+   if params[:query].present?
+     @flowers = Flower.search_by_name_and_species(params[:query])
+   else
+     @flowers = Flower.all
+   end
+ end
 
   def show
   end
