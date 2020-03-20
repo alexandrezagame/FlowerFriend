@@ -33,6 +33,7 @@
             <%= link_to "+ add shop", new_flower_shop_path, class: "btn btn-outline-light nav-btn" %>
           <% end %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= current_user.email %>
           </div>
         </li>
       <% else %>

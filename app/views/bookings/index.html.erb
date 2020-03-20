@@ -1,19 +1,24 @@
-<div class="main-container">
-    <!-- bookings -->
-    <div class="cards">
-        <% @bookings.each do |booking| %>
+<!-- bookings -->
+<div class="row justify-content-center">
+    <div class="card-product-show">
         <div class="card-product-infos">
-            <ul>
-                <h5>
-                    <li>
-                        <%= booking.created_at.strftime("%A %b %d, %Y") %>
-                        <%= booking.flower_id %>
-                        <%= booking.user_id %>
-                    </li>
-                </h5>
-            </ul>
+            <% @bookings.each do |booking| %>
+            <div class="card-product-infos">
+                <ul>
+                    <h5>
+                        <li>
+                            Pick up date: <%= booking.created_at.strftime("%A %b %d, %Y") %> |
+                            <%= booking.flower.name %> |
+                            <%= booking.user.email %>
+                        </li>
+                    </h5>
+                </ul>
+            </div>
+            <% end %>
         </div>
-        <% end %>
-        <%= link_to 'all flowers', flowers_path, class: "btn btn-outline-light form-button" %>
     </div>
+</div>
+<br>
+<div class="row justify-content-center">
+    <%= link_to 'back to flower shop', flowers_path, class: "btn btn-outline-light form-button" %>
 </div>
