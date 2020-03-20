@@ -11,8 +11,8 @@
                             <%= booking.flower.name %> |
                             <%= booking.user.email %> |
                             <% if booking.booking_status == "pending" && current_user.flower_shop == booking.flower.flower_shop %>
-                <%= link_to "Approve", booking_approve_path(booking), method: :patch, class: "change to your class" %>
-                <%= link_to "Decline", booking_decline_path(booking), method: :patch, class: "change to your class" %>
+                <%= link_to "Approve", booking_approve_path(booking), method: :patch, class: "btn btn-outline-light form-button" %>
+                <%= link_to "Decline", booking_decline_path(booking), method: :patch, class: "btn btn-outline-light form-button" %>
                 <% else %>
                 <%= booking.booking_status %>
                 <% end %>
