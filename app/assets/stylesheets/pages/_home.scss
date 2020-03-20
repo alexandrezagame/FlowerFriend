@@ -1,0 +1,13 @@
+
+.home-cards {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-grow: 1;
+
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // gap: 12px;
+  align-items: center;
+  // padding: 20px;
+}
