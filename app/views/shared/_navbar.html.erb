@@ -24,6 +24,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
            <% if current_user.flower_shop %>
             <%= link_to "your flower shop", flower_shop_path(current_user), class: "dropdown-item" %>
+            <%= link_to "see all bookings", bookings_path, class: "dropdown-item" %>
           <% else %>
             <%= link_to "+ add shop", new_flower_shop_path, class: "btn btn-outline-light nav-btn" %>
           <% end %>

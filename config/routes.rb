@@ -5,6 +5,6 @@ Rails.application.routes.draw do
    resources :flowers do
     resources :bookings, only: [ :new, :create ]
    end
-   resources :bookings, only: [:index]
+   resources :bookings, only: [ :show, :index ]
    resources :flower_shops, only: [:show, :new, :create]
 end

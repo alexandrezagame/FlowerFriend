@@ -1,7 +1,16 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    if current_user.owner?
+      @bookings = current_user.flower_shop.bookings
+    else
+      @bookings = Booking.where(user: current_user)
+    end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    # bookings --> i need the flower id, flowershop id and user id
   end
 
   def new
