@@ -6,6 +6,7 @@
       <%= @flower_shop.address %>
     </h4>
     <div class="d-flex">
+      <div class="row">
         <% @flower_shop.flowers.each do |flower| %>
           <%= link_to flower_path(flower) do %>
             <div class="card-product-infos">
@@ -31,9 +32,10 @@
             </div>
           <% end %>
         <% end %>
+        </div>
     </div>
     <% if current_user == @flower_shop.user %>
-    <%= link_to "add a flower", new_flower_path %>
+    <%= link_to "add a flower", new_flower_path, class: "btn btn-outline-light btn-shop" %>
     <% end %>
 </div>
-    <%= link_to 'Back', flowers_path %>
+    <%= link_to 'Back', flowers_path, class: "btn btn-outline-light btn-shop" %>
