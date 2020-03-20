@@ -4,7 +4,7 @@
     <% if @flower.picture.attached? %>
     <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
     <% else %>
-    <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="Flower Picture">
+    <img src="https://source.unsplash.com/featured/?flower, <%= @flower.name %>" alt="Flower Picture">
     <% end %>
     <div class="card-product-infos">
         <h2 class="showtextborders">
@@ -23,9 +23,11 @@
     </div>
     <div class="show-buttons">
                 <%= link_to 'Back', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
+                  <% if user_signed_in? %>
                   <% if @flower.flower_shop == current_user.flower_shop %>
                 <%= link_to 'Edit', edit_flower_path(@flower.id), class: "btn btn-outline-light buttons" %>
                 <%= link_to 'Delete', flower_path(@flower), method: :delete, class: "btn btn-outline-light buttons" %>
+                  <% end %>
                   <% else %>
                 <%= link_to 'Book this flower', new_flower_booking_path(@flower),  class: "btn btn-outline-light buttons" %>
                   <% end %>
