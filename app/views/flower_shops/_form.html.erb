@@ -1,5 +1,6 @@
 <%= simple_form_for @flower_shop do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :picture, as: :file %>
     <%= f.submit %>
   <% end %>
