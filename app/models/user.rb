@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  def owner?
+    !flower_shop.nil?
+  end
 end
