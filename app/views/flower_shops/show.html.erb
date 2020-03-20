@@ -1,25 +1,36 @@
-<%= @flower_shop.name %>
-<div class="card-product-show">
-    <% @flower_shop.flowers.each do |flower| %>
-    <div class="card-product-infos">
-        <% if flower.picture.attached? %>
-        <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
-            <% else %>
-            <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
-                <% end %>
+<div class="card-product-show-shop">
+    <h1>
+        <%= @flower_shop.name %>
+    </h1>
+    <h4>
+      <%= @flower_shop.address %>
+    </h4>
+    <div class="d-flex">
+        <% @flower_shop.flowers.each do |flower| %>
+          <%= link_to flower_path(flower) do %>
+            <div class="card-product-infos">
+            <% if flower.picture.attached? %>
+              <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
                 <h5>
-                    <%= flower.name %>
+                  <%= flower.name %>
                 </h5>
                 <p>
-                    <%= flower.species %>
+                  <%= flower.species %>
                 </p>
-                <br>
-                <%= link_to "show", flower_path(flower), class: "btn btn-outline-light button" %>
+              </div>
+            <% else %>
+              <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
+                <h5>
+                  <%= flower.name %>
+                </h5>
+                <p>
+                  <%= flower.species %>
+                </p>
+              </div>
+            <% end %>
             </div>
-        </div>
-      <% end %>
-        <%= link_to 'Back', flowers_path %>
-    </li>
-    </ul>
-        <%= render 'shared/map'%>
+          <% end %>
+        <% end %>
+    </div>
 </div>
+    <%= link_to 'Back', flowers_path %>
