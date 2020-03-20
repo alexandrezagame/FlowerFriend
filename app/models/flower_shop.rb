@@ -1,5 +1,6 @@
 class FlowerShop < ApplicationRecord
   belongs_to :user
+  has_one_attached :picture
   has_many :flowers
   has_many :bookings, through: :flowers
   geocoded_by :address

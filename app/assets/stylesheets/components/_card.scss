@@ -11,6 +11,14 @@
   margin-top: 16px;
   width: 400px;
 }
+a:hover {
+  text-decoration: none;
+}
+.carousel-card {
+  width: 100% !important;
+  height: 400px !important;
+
+}
 
 .card-product {
   height: 250px;
@@ -24,9 +32,9 @@
   // border-radius: 3px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0);
   border: 10px solid white;
-  // &:hover{
-  //   opacity: 1;
-  //   }
+   a:hover{
+     text-decoration: none;
+    }
 }
 
 .card-product img {
