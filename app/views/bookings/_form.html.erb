@@ -1,5 +1,5 @@
  <%= simple_form_for [@flower, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, order: [:day, :month, :year], label: "Pickup date" %>
+    <%= f.input :pick_up_date, as: :date, order: [:day, :month, :year], label: "Pickup date" %>
     <%= f.submit %>
   <% end %>
 

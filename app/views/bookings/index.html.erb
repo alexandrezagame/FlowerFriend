@@ -7,9 +7,15 @@
                 <ul>
                     <h5>
                         <li>
-                            Pick up date: <%= booking.created_at.strftime("%A %b %d, %Y") %> |
+                            Pick up date: <%= booking.pick_up_date.strftime("%A %b %d, %Y") %> |
                             <%= booking.flower.name %> |
-                            <%= booking.user.email %>
+                            <%= booking.user.email %> |
+                            <% if booking.booking_status == "pending" && current_user.flower_shop == booking.flower.flower_shop %>
+                <%= link_to "Approve", booking_approve_path(booking), method: :patch, class: "change to your class" %>
+                <%= link_to "Decline", booking_decline_path(booking), method: :patch, class: "change to your class" %>
+                <% else %>
+                <%= booking.booking_status %>
+                <% end %>
                         </li>
                     </h5>
                 </ul>
