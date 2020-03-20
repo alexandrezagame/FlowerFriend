@@ -26,7 +26,7 @@ Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaeren
     </div>
     <div class="show-buttons">
                 <%= link_to 'Back', flowers_path, class: "btn btn-outline-light buttons" %>
-                  <% if @flower.flower_shop == current_user.flower_shop %>
+                  <% if @flower.flower_shop == current_user %>
                 <%= link_to 'Edit', edit_flower_path(@flower.id), class: "btn btn-outline-light buttons" %>
                 <%= link_to 'Delete', flower_path(@flower), method: :delete, class: "btn btn-outline-light buttons" %>
                   <% else %>
