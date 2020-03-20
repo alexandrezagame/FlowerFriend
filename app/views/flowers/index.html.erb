@@ -3,8 +3,8 @@
     <!-- Cards -->
 
     <div class="cards">
-      <% @flowers.each do |flower| %>
-            <%= link_to flower_path(flower) do %>
+      <% @flower_shops.each do |flower_shop| %>
+            <%= link_to flower_shop_path(flower_shop) do %>
             <div class="card-product-infos">
                 <% if flower.picture.attached? %>
                 <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path flower.picture.key %>');">
@@ -12,10 +12,10 @@
                     <div class="card-product" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?flower, <%= flower.name %>');">
                         <% end %>
                         <h5>
-                            <%= flower.name %>
+                            <%= @flower_shop.name %>
                         </h5>
                         <p>
-                            <%= flower.species %>
+                            <%= @flower_shop.address %>
                         </p>
                         <br>
                     </div>
