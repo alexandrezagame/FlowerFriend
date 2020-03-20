@@ -1,0 +1,33 @@
+<%= render 'shared/banner'%>
+<div class="main-container">
+    <!-- Cards -->
+    <div class="shop-cards">
+      <% @flower_shops.each do |flower_shop| %>
+        <%= link_to flower_shop_path(flower_shop) do %>
+          <div class="shop-card">
+            <div class="shop-card-img" id="img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/300x300/?flowershop');">
+            </div>
+            <div class="shop-card-info">
+                <h2>
+                  <%= flower_shop.name %>
+                </h2>
+                <p>
+                  <%= flower_shop.address %>
+                </p>
+              <br>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+<div
+  id="map"
+  style="
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+</div>

@@ -19,18 +19,7 @@
         </div>
       <% end %>
         <%= link_to 'Back', flowers_path %>
-        <ul>
-          <% if user_signed_in? %>
-          <% if current_user.flower_shop %>
-            <li>
-              <%= link_to "Add a new flower", new_flower_path, class: "nav-link" %>
-            </li>
-        <% else %>
-            <li>
-              <%= link_to 'Back', flowers_path %>
-            </li>
-        </ul>
-        <% end %>
-        <% end %>
-    </div>
+    </li>
+    </ul>
+        <%= render 'shared/map'%>
 </div>

@@ -1,5 +1,10 @@
 class FlowerShopsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
+  
+  def index
+    @flower_shops = FlowerShop.all
+  end
+  
   def show
     @flower_shop = FlowerShop.find(params[:id])
     @flowers = @flower_shop.flowers
