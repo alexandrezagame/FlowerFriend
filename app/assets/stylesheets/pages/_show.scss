@@ -14,10 +14,11 @@
 
 
 .card-product-show img {
-  height: 100%;
+  height: 400px;
   width: 400px;
   object-fit: cover;
   background-size: cover !important;
+  border: 2px solid white;
 }
 
 .card-product-show h2 {
@@ -58,4 +59,14 @@
   // margin-top: auto;
   // margin-bottom: auto;
   justify-content: space-between;
+}
+
+.showtextborders {
+  border-bottom: 1px solid white;
+}
+
+.card-product-infos {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 10px;
 }

@@ -4,10 +4,10 @@
     <% if @flower.picture.attached? %>
     <%= cl_image_tag(@flower.picture.key, width: 400, height: 300, crop: :fill) %>
     <% else %>
-    <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="">
+    <img src="'https://source.unsplash.com/featured/?flower, <%= @flower.name %>'" alt="Flower Picture">
     <% end %>
     <div class="card-product-infos">
-        <h2>
+        <h2 class="showtextborders">
             <%= @flower.name %>
         </h2>
         <h6>
@@ -18,10 +18,7 @@
         </h6>
 
         <p>
-          "Lorem ipsum dolor sit amet, nisl efficiantur has in. Sit ne quaeque gloriatur, vix omittam voluptatum deterruisset ea. Has cetero iisque theophrastus ad, id oratio officiis pro. Mea partem tractatos ex, at has fugit epicuri. His ut modo nulla noluisse, quo ei laudem timeam, te noluisse fabellas perpetua vel. Id prima falli tacimates vis, malorum veritus mel an, te vis sanctus dissentias mediocritatem.
-
-Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaerendum ea. At erant feugiat vis, no mei scaevola assueverit. Ne quot meliore disputationi qui. Quando tamquam eloquentiam ei nec."
-
+          A Cactus (plural cacti, cactuses, or less commonly, cactus) is a member of the plant family Cactaceae, a family comprising about 127 genera with some 1750 known species of the order Caryophyllales. The word "cactus" derives, through Latin, from the Ancient Greek κάκτος, kaktos, a name originally used by Theophrastus for a spiny plant whose identity is now not certain. Cacti occur in a wide range of shapes and sizes. Most cacti live in habitats subject to at least some drought. Many live in extremely dry environments, even being found in the Atacama Desert, one of the driest places on earth.
         </p>
     </div>
     <div class="show-buttons">
@@ -32,7 +29,7 @@ Pri ea ullum dolores expetenda, id duo adhuc accusam, nec ullum vivendum quaeren
                   <% else %>
                 <%= link_to 'Book this flower', new_flower_booking_path(@flower),  class: "btn btn-outline-light buttons" %>
                   <% end %>
-                <%= link_to 'see more flowers from that shop', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
+                <%= link_to 'Visit this shop', flower_shop_path(@flower.flower_shop), class: "btn btn-outline-light buttons" %>
     </div>
 </div>
 </div>
