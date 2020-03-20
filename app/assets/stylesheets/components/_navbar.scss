@@ -35,9 +35,11 @@
 .nav-btn {
   color: #1D4A4D;
   border-color: #1D4A4D;
+  margin: 5px;
   &:hover {
   color: white;
   background-color: #1D4A4D;
   opacity: .7;
+  margin: 5px;
   }
 }

@@ -1,6 +1,7 @@
 <%= render 'shared/banner'%>
 <div class="main-container">
     <!-- Cards -->
+
     <div class="cards">
       <% @flowers.each do |flower| %>
             <%= link_to flower_path(flower) do %>
@@ -25,7 +26,7 @@
 
 <div
   id="map"
-  style="width: 100%;
+  style="
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"

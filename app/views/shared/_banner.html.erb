@@ -1,6 +1,21 @@
  <div class="banner">
     <div class="container">
     <p>Bring nature inside</p>
-    <button type="button" class="btn btn-outline-light">Search for your next flower</button>
+    <form action="/flowers" method="GET">
+    <input class="btn btn-outline-light" type="text" name="query" id="query" placeholder="Search flower…">
+    <input class="btn btn-outline-light" type="submit" name="commit" value="Search">
+    </form>
+<!--     <button type="button" class="btn btn-outline-light">Search for your next flower</button> -->
   </div>
  </div>
+
+
+
+
+
+<!-- <div class="text-container">
+    <form action="/flowers" method="GET">
+        <input type="text" name="query" id="query" placeholder="Search flower…">
+        <input type="submit" name="commit" value="Search">
+    </form>
+</div> -->

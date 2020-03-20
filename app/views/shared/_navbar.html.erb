@@ -6,14 +6,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <!-- SEARCH BAR -->
-  <form action="/flowers" method="GET">
-    <input type="text" name="query" id="query" placeholder="Search flower…">
-    <input type="submit" name="commit" value="Search">
-  </form>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
+    <form action="/flowers" method="GET">
+    <input class="btn btn-outline-light nav-btn" type="text" name="query" id="query" placeholder="Search flower…">
+    <input class="btn btn-outline-light nav-btn" type="submit" name="commit" value="Search">
+    </form>
       <% if user_signed_in? %>
         <li class="nav-item options">
           <%= link_to "+ add shop", new_flower_shop_path, class: "btn btn-outline-light nav-btn" %>
