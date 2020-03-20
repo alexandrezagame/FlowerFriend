@@ -35,7 +35,7 @@ puts "create users"
 
 puts "creating your flowershop"
 flower_shop_alpha = FlowerShop.new(
-    name: "alpha",
+    name: "Kings Shop",
     address: "Götgatan 33, 116 21 Stockholm",
     user: alex
   )
@@ -43,55 +43,59 @@ flower_shop_alpha.save!
 
 puts "creating your flowershop"
 flower_shop_beta = FlowerShop.new(
-    name: "beta",
+    name: "Nina's Flower Shop",
     address: "Kåkbrinken 10, 111 27 Stockholm",
     user: nina
   )
 flower_shop_beta.save!
 
-puts "creating your flower"
+puts "creating your flowers"
   flower = Flower.new(
-    name: "red rose",
+    name: "Rose from Spain",
     species: "Rose",
-    total_price: "15€",
+    total_price: "12€",
     flower_shop: flower_shop_alpha
     )
   flower.save!
 
-puts "creating your flower"
   flower = Flower.new(
-    name: "flower 1 from alpha shop",
+    name: "Azalea from the Amazon",
     species: "Azalea",
     total_price: "25€",
     flower_shop: flower_shop_alpha
     )
   flower.save!
 
-puts "creating your flower"
   flower = Flower.new(
-    name: "flower 2 from alpha shop",
-    species: "Tulip",
+    name: "Lily from Sweden",
+    species: "Lily",
     total_price: "15€",
     flower_shop: flower_shop_alpha
     )
 flower.save!
 
-puts "creating your flower"
   flower = Flower.new(
-    name: "flower 3 from alpha shop",
+    name: "Pione from Norway",
     species: "Pione",
-    total_price: "15€",
+    total_price: "8€",
     flower_shop: flower_shop_alpha
     )
 flower.save!
 
-puts "creating your flower"
   flower = Flower.new(
-    name: "flower 1 from beta shop",
+    name: "Tulip from the Netherlands",
     species: "Tulip",
     total_price: "10€",
     flower_shop: flower_shop_beta
     )
   flower.save!
 
-puts "your damn seeding is done..."
+  flower = Flower.new(
+    name: "Lily from Egypt",
+    species: "Lily of the Nile",
+    total_price: "20€",
+    flower_shop: flower_shop_beta
+    )
+  flower.save!
+
+puts "your seeding is done..."
