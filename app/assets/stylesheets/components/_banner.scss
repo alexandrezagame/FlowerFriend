@@ -1,6 +1,7 @@
 .banner {
   // background-size: cover !important;
-  background-image: url("https://images.unsplash.com/photo-1496309732348-3627f3f040ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    background-image: url("https://images.unsplash.com/photo-1489919712052-23b74fe5bbf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2449&q=80");
+
   background-position: center;
   position: relative;
   padding: 150px 0;
@@ -13,17 +14,17 @@
 }
 
 .homebanner {
+  background-color: #1D4A4D;
   // background-size: cover !important;
-  background-image: url("https://images.unsplash.com/photo-1489919712052-23b74fe5bbf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2449&q=80");
   background-position: center;
   position: relative;
   color: white;
-  padding: 150px 0;
+  padding: 15px 0;
   margin-top: -16px;
-  height: 560px;
+  height: auto;
   width: 100%;
   object-fit: cover;
-  border-bottom: 1px solid white;
+  // border-bottom: 1px solid white;
   border-top: 2px solid black;
 }
 
@@ -55,4 +56,58 @@
 button:hover {
   opacity: 0.7;
 }
+
+// HTML, BODY {
+//   height: 100%;
+//   font-size: 16px;
+//   line-height: 1.5;
+//   font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+// }
+
+// BODY {
+//   overflow: hidden;
+//   background-color: #222;
+//   background-image: 
+//     linear-gradient(to right, rgba(255,255,255,.025) 10%, transparent 0),
+//     linear-gradient(#222, #000);
+//   background-size: .75em 100%, 100% 100%;
+//   background-attachment: fixed;
+//   display: flex;
+//   align-items: center;
+// }
+
+.wrapper {
+  position: relative;
+  flex-grow: 1;
+  margin: auto;
+  max-width: 1200px;
+  max-height: 100vh;
+  
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2vmin;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper img {
+  z-index: 1;
+  grid-column: span 2;
+  max-width: 100%;
+  margin-bottom: -52%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transform: scale(1);
+  transition: all .25s;
+  
+  &:nth-child(7n + 1) {
+    grid-column: 2 / span 2;
+  }
+  
+  &:hover {
+    z-index: 2;
+    transform: scale(2);
+  }
+}
+
 

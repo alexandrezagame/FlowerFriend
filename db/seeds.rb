@@ -41,13 +41,6 @@ flower_shop_alpha = FlowerShop.new(
   )
 flower_shop_alpha.save!
 
-puts "creating your flowershop"
-flower_shop_beta = FlowerShop.new(
-    name: "Nina's Flower Shop",
-    address: "Kåkbrinken 10, 111 27 Stockholm",
-    user: nina
-  )
-flower_shop_beta.save!
 
 puts "creating your flowers"
   flower = Flower.new(
@@ -82,20 +75,6 @@ flower.save!
     )
 flower.save!
 
-  flower = Flower.new(
-    name: "Tulip from the Netherlands",
-    species: "Tulip",
-    total_price: "10€",
-    flower_shop: flower_shop_beta
-    )
-  flower.save!
 
-  flower = Flower.new(
-    name: "Lily from Egypt",
-    species: "Lily of the Nile",
-    total_price: "20€",
-    flower_shop: flower_shop_beta
-    )
-  flower.save!
 
 puts "your seeding is done..."
